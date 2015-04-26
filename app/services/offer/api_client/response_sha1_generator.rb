@@ -1,6 +1,6 @@
 class Offer::ApiClient::ResponseSha1Generator
   def initialize(response)
-    @response = response
+    @response = response.to_s
   end
 
   def sha1

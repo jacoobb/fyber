@@ -10,9 +10,8 @@ class Offer::ApiClient
 
   def get_offers
     response = call
-    response_sha1 = Offer::ApiClient::ResponseSha1Generator.new(response).sha1
-    return {code: false, response: JSON.parse(response)} unless response_signature_valid?(response)
-    {code: response.code, response: JSON.parse(response)}
+    return {code: false, response: JSON.parse(response.body)} unless response_signature_valid?(response)
+    {code: response.code, response: JSON.parse(response.body)}
   end
   
   
