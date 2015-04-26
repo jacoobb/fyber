@@ -1,0 +1,7 @@
+<h1 class="page-header">Offers</h1>
+<% if @offers.present? %>
+  <%= render 'offers', offers: @offers %>
+<% else %>
+  <p>No offers</p> 
+<% end %>
+<p><%= link_to "Back", new_offers_url, class: "btn btn-warning" %></p>

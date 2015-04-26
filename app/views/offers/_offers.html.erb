@@ -1,0 +1,18 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Payout</th>
+      <th>Thumbnail</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% offers.each do |offer| %>
+      <tr>
+        <td><%= offer['title'] %></td>
+        <td><%= offer['payout'] %></td>
+        <td><%= image_tag (offer['thumbnail']['lowres']) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
